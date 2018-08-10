@@ -1,6 +1,3 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
-app_calculator:
-  path: /index/calculator
-  controller: App\Controller\CalculatorController::number

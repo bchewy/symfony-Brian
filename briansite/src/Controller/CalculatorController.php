@@ -1,26 +1,19 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Brian
- * Date: 8/10/2018
- * Time: 8:46 PM
- */
 
 namespace App\Controller;
 
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Routing\Annotation\Route;
 
-use Symfony\Component\HttpFoundation\Response;
-class CalculatorController
+class CalculatorController extends AbstractController
 {
-    public function number()
+    /**
+     * @Route("/calculator", name="calculator")
+     */
+    public function index()
     {
-        try {
-            $number = random_int(0, 100);
-        } catch (\Exception $e) {
-        }
-
-        return new Response(
-            '<html><body>Lucky number: '.$number.'</body></html>'
-        );
+        return $this->render('calculator/index.html.twig', [
+            'controller_name' => 'CalculatorController',
+        ]);
     }
 }
